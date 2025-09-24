@@ -1,0 +1,160 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #003366;
+  --secondary: #0077cc;
+  --accent: #005fa3;
+  --bg: #f4f9ff;
+  --light: #fff;
+}
+
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--primary);
+  text-align: center;
+  line-height: 1.6;
+}
+
+header {
+  background: var(--primary);
+  color: var(--light);
+  padding: 15px;
+}
+
+nav {
+  background: var(--secondary);
+  padding: 10px;
+}
+
+nav button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  background: var(--accent);
+  color: var(--light);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background: #004080;
+}
+
+/* Sections */
+section {
+  display: none;
+  padding: 20px;
+}
+
+section.active {
+  display: block;
+}
+
+/* Forms */
+form {
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: left;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  background: var(--secondary);
+  color: var(--light);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: var(--accent);
+}
+
+/* Tables */
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+  background: var(--light);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background: var(--secondary);
+  color: var(--light);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: var(--light);
+  padding: 20px;
+  border-radius: 6px;
+  width: 400px;
+  max-width: 90%;
+  text-align: left;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav button {
+    flex: 1 1 40%;
+  }
+  table {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seat Exception Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>Seat Exception Portal</h1>
+  </header>
+
+  <nav>
+    <button data-section="welcome">Home</button>
+    <button data-section="login">Login</button>
+    <button data-section="signup">Sign Up</button>
+    <button data-section="about">About Us</button>
+  </nav>
+
+  <main>
+    <!-- Welcome -->
+    <section id="welcome" class="active" aria-hidden="false">
+      <h2>Welcome,</h2>
+      <p>This portal helps manage <strong>seat exception requests</strong> between students and instructors.</p>
+    </section>
+
+    <!-- Login -->
+    <section id="login" aria-hidden="true">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="login-username">Username:</label>
+        <input type="text" id="login-username" required>
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" required>
+        <label for="login-role">Role:</label>
+        <select id="login-role" required>
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <!-- Signup -->
+    <section id="signup" aria-hidden="true">
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <label for="signup-username">Username:</label>
+        <input type="text" id="signup-username" required>
+        <label for="signup-password">Password:</label>
+        <input type="password" id="signup-password" required>
+        <label for="signup-role">Role:</label>
+        <select id="signup-role" required>
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+        <button type="submit">Sign Up</button>
+      </form>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-hidden="true">
+      <h2>About Us</h2>
+      <p>The Seat Exception Portal is a role-based platform designed to streamline communication between students and instructors regarding seat-related requests.
+
+👩‍🎓 Students can log in to submit requests for seat changes, course overloads, or special permissions, providing detailed reasons to justify their needs.
+
+👨‍🏫 Instructors have a dedicated dashboard to review these requests. They can approve or reject submissions and provide constructive feedback through a guided interface, ensuring transparency and fairness in decision-making.
+
+🔒 With role-based access, each user experiences a personalized dashboard:
+
+Students see their request history, status updates, and teacher feedback.
+
+Teachers manage all pending requests in one place, making the approval process efficient.
+
+💡 Designed with simplicity, accountability, and collaboration in mind, the portal empowers both students and teachers to handle seat exception requests quickly and clearly.</p>
+ </section>
+
+    <!-- Student Dashboard -->
+    <section id="student-dashboard" aria-hidden="true">
+      <h2>Student Dashboard</h2>
+      <form id="student-form">
+        <label for="student-id">Student ID:</label>
+        <input type="text" id="student-id" required>
+        <label for="student-name">Name:</label>
+        <input type="text" id="student-name" required>
+        <label for="request-type">Request Type:</label>
+        <select id="request-type" required>
+          <option value="Seat Change">Seat Change</option>
+          <option value="Course Overload">Course Overload</option>
+          <option value="Special Permission">Special Permission</option>
+        </select>
+        <label for="reason">Reason:</label>
+        <textarea id="reason" required></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+      <table id="student-table"></table>
+    </section>
+
+    <!-- Teacher Dashboard -->
+    <section id="teacher-dashboard" aria-hidden="true">
+      <h2>Teacher Dashboard</h2>
+      <table id="teacher-table"></table>
+    </section>
+  </main>
+
+  <!-- Modal for Teacher Feedback -->
+  <div id="feedback-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Provide Feedback</h3>
+      <form id="feedback-form">
+        <label for="feedback-status">Decision:</label>
+        <select id="feedback-status" required>
+          <option value="Approved">Approve</option>
+          <option value="Rejected">Reject</option>
+        </select>
+        <label for="feedback-text">Feedback:</label>
+        <textarea id="feedback-text" required></textarea>
+        <button type="submit">Submit</button>
+        <button type="button" id="close-modal">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; Seat Exception Portal - By: Saahil Bhatti</p>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
